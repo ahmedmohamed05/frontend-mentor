@@ -16,6 +16,8 @@ body {
   filter: blur(8rem);
   width: var(--size);
   height: var(--size);
+  opacity: 0;
+  transition: 0.3s;
 }
 
 .wrapper {
