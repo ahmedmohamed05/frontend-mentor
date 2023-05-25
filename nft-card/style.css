@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.cursor {
+  --size: 100px;
+  position: fixed;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background-color: hsl(178, 100%, 50%);
+  filter: blur(8rem);
+  width: var(--size);
+  height: var(--size);
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: hsl(217, 54%, 11%);
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  border-radius: 10px;
+  background-color: hsl(216, 50%, 16%);
+  color: hsl(0, 0%, 100%);
+  max-width: 22rem;
+  padding: 1.5rem;
+  position: relative;
+  text-align: center;
+}
+.card .card-img {
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  max-height: 300px;
+  overflow: hidden;
+}
+.card .card-img::before {
+  content: "";
+  position: absolute;
+  opacity: 0.5;
+  height: 0;
+  width: 0;
+  inset: 0;
+  margin: auto;
+  border-radius: 10px;
+  transition: 0.3s;
+  background-color: hsl(178, 100%, 50%);
+}
+.card .card-img:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.card .card-img::after {
+  content: url("./images/icon-view.svg");
+  position: absolute;
+  opacity: 0;
+  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .card-img:hover::after {
+  opacity: 1;
+}
+.card .card-img img {
+  border-radius: inherit;
+  width: 100%;
+}
+.card .text {
+  text-align: left;
+  margin-top: 1rem;
+}
+.card .text .number {
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.card .text .desc {
+  color: hsl(215, 51%, 70%);
+  font-size: 18px;
+  margin: 0.7rem 0;
+}
+.card .text .details {
+  margin: 1.3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card .text .details > span {
+  display: flex;
+  align-items: center;
+}
+.card .text .details > span > img {
+  margin-right: 0.5rem;
+}
+.card .text .details .eth {
+  color: hsl(178, 100%, 50%);
+  font-weight: 600;
+}
+.card .text .details .time-left {
+  color: hsl(215, 51%, 70%);
+}
+.card .text .details .eth img {
+  width: 12px;
+}
+.card .text .details .time-left img {
+  width: 18px;
+}
+.card hr {
+  border: none;
+  margin: 15px 0;
+  height: 1px;
+  width: 100%;
+  background: hsl(215, 32%, 27%);
+}
+.card .creator {
+  display: flex;
+  align-items: center;
+}
+.card .creator > img {
+  border: solid 1px white;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.card .creator p {
+  color: hsl(215, 51%, 70%);
+}
+.card .creator p span {
+  color: white;
+  cursor: pointer;
+}
+.card .creator p span:hover,
+.card .text .number:hover {
+  color: hsl(178, 100%, 50%);
+}

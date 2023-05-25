@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <title>Frontend Mentor | NFT preview card component</title>
+  </head>
+  <body>
+    <div class="cursor"></div>
+    <div class="wrapper">
+      <div class="card">
+        <div class="card-img">
+          <img src="./images/image-equilibrium.jpg" alt="Equilibrium" />
+        </div>
+        <div class="text">
+          <p class="number">Equilibrium #3429</p>
+          <p class="desc">
+            Our Equilibrium collection promotes balance and calm.
+          </p>
+          <div class="details">
+            <span class="eth">
+              <img src="./images/icon-ethereum.svg" alt="Ethereum" />
+              0.041 ETH
+            </span>
+            <span class="time-left">
+              <img src="./images/icon-clock.svg" alt="Cock" />
+              3 days left
+            </span>
+          </div>
+          <hr />
+          <div class="creator">
+            <img width="30px" src="./images/image-avatar.png" alt="Avatar" />
+            <p>Creation of <span>Jules Wyvern</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let cursor = document.querySelector(".cursor");
+
+    document.body.onmousemove = (e) => {
+      cursor.animate(
+        {
+          left: e.clientX + "px",
+          top: e.clientY + "px",
+        },
+        {
+          duration: 300,
+          fill: "forwards",
+        }
+      );
+    };
+  </script>
+</html>
