@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./dist/output.css" />
+
+    <script src="./dist/script.js" defer></script>
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <div class="wrapper flex flex-col">
+      <div class="img-holder relative">
+        <img
+          class="w-full"
+          src="./dist/assets/images/illustration-sign-up-mobile.svg"
+          alt=""
+        />
+      </div>
+      <div class="container px-4 mx-auto mt-5">
+        <h1 class="text-4xl font-bold text-dark-slate">Stay updated!</h1>
+        <p class="my-4 text-charcoal">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul class="list-none">
+          <li>
+            <img
+              src="./dist/assets/images/icon-list.svg"
+              alt="Check icon with orange background"
+              class="icon"
+            />
+            <p>Product discovery and building what matters</p>
+          </li>
+          <li>
+            <img
+              src="./dist/assets/images/icon-list.svg"
+              alt="Check icon with orange background"
+              class="icon"
+            />
+            <p>Measuring to ensure updates are a success</p>
+          </li>
+          <li>
+            <img
+              src="./dist/assets/images/icon-list.svg"
+              alt="Check icon with orange background"
+              class="icon"
+            />
+            <p>And much more!</p>
+          </li>
+        </ul>
+        <form>
+          <label for="email">
+            <div class="text">
+              <span>Email Address</span>
+            </div>
+            <input
+              autocomplete="off"
+              class="block w-full p-2 mt-2 border-[1px] rounded-md"
+              type="email"
+              placeholder="email@company.com"
+              name="email"
+              id="email"
+            />
+          </label>
+          <button
+            class="w-full py-4 bg-dark-slate text-white rounded mt-4 font-bold"
+            type="submit"
+          >
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="success-msg w-full bg-white md:rounded-3xl hidden">
+      <div class="container px-4 pt-40 mx-auto md:py-4 h-[100dvh]">
+        <img src="./dist/assets/images/icon-success.svg" alt="Success Image" />
+
+        <div class="text mt-4 md:mb-12">
+          <h1 class="text-4xl font-bold text-dark-slate my-4">
+            Thanks for subscribing!
+          </h1>
+          <p class="text-dark-slate">
+            A confirmation email has been sent to
+            <b>ash@loremcompany.com.</b> Please open it and click the button
+            inside to confirm your subscription.
+          </p>
+        </div>
+        <button
+          class="w-full py-4 bg-dark-slate text-white rounded-xl font-bold mb-10"
+          type="submit"
+        >
+          Dismiss message
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
