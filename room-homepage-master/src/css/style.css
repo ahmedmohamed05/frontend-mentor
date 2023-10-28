@@ -1,0 +1,241 @@
+:root {
+  --dark-gray: hsl(0, 0%, 63%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --very-dark-gary: hsl(0, 0%, 27%);
+  --small-font-size: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+.center-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 1em;
+  height: 100%;
+}
+.text .desc {
+  color: var(--very-dark-gary);
+  font-size: var(--small-font-size);
+  line-height: 1.4;
+}
+@media (max-width: 991px) {
+  .text {
+    padding-block: 1em;
+  }
+}
+
+/* Grid Layout And Images */
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.top-left {
+  grid-area: 1 / 1 / span 4 / span 8;
+  background-image: url("../images/desktop-image-hero-1.jpg");
+}
+.top-right {
+  grid-area: 1 / 9 / span 4 / span 4;
+}
+.bottom-left {
+  grid-area: 5 / 1 / span 2 / span 4;
+  background-image: url("../images/image-about-dark.jpg");
+}
+.bottom-center {
+  grid-area: 5 / 5 / span 2 / span 5;
+}
+.bottom-right {
+  grid-area: 5 / 10 / span 2 / span 3;
+  background-image: url("../images/image-about-light.jpg");
+}
+.slide-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 991px) {
+  .page {
+    row-gap: 1em;
+    grid-template-rows: repeat(7, 1fr);
+  }
+  .top-left {
+    background-image: url("../images/mobile-image-hero-1.jpg");
+    grid-area: 1 / 1 / span 3 / span 12;
+  }
+  .top-right {
+    grid-area: 4 / 1 / span 1 / span 12;
+  }
+  .bottom-left {
+    grid-area: 5 / 1 / span 1 / span 12;
+  }
+  .bottom-center {
+    grid-area: 6 / 1 / span 1 / span 12;
+  }
+  .bottom-right {
+    grid-area: 7 /1 / span 1 / span 12;
+  }
+}
+
+header {
+  padding-block: 1.5em;
+}
+header .container {
+  --_gap: 2em;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: var(--_gap);
+}
+@media (max-width: 991px) {
+  header .container {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding-inline: 2em;
+  }
+}
+header nav {
+  position: relative;
+}
+header nav .nav-icon {
+  display: none;
+}
+@media (max-width: 991px) {
+  header:has(.nav-icon.active) {
+    background-color: var(--white);
+  }
+  header nav .nav-icon {
+    display: block;
+    cursor: pointer;
+    &.active + ul {
+      position: absolute;
+      display: flex;
+      left: 300%;
+      top: -50%;
+      transform: translateY(50%);
+      & li a {
+        padding: 0;
+        color: var(--black);
+      }
+    }
+  }
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--_gap) - 0.5em);
+}
+@media (max-width: 991px) {
+  header nav ul {
+    display: none;
+  }
+}
+
+header nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5em;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    translate: -50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: 0.2s;
+  }
+
+  &:is(:hover, .active)::after {
+    width: 30px;
+  }
+}
+
+.top-right {
+  position: relative;
+}
+
+.top-right .text {
+  padding-inline: 4em;
+}
+@media (max-width: 991px) {
+  .top-right .text {
+    padding-inline: 2em;
+  }
+}
+
+.top-right .text button {
+  all: unset;
+  font-size: var(--small-font-size);
+  cursor: pointer;
+  letter-spacing: 0.7em;
+  &:is(:hover, :foucs) {
+    color: var(--very-dark-gary);
+  }
+}
+
+.arrows {
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  display: flex;
+}
+@media (max-width: 991px) {
+  .top-right .arrows {
+    bottom: calc(100% + 1em);
+    right: 0;
+    justify-content: flex-end;
+  }
+}
+.arrows button {
+  all: unset;
+  font-size: 2em;
+  background-color: var(--black);
+  padding: 0.67em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  &:is(:hover, :focus) {
+    background-color: var(--dark-gray);
+  }
+}
+
+.bottom-center .text {
+  padding-inline: 2em;
+}
+.bottom-center .text .title {
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
