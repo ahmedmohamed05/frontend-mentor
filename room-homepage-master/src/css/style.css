@@ -57,7 +57,6 @@ ul {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
 }
-
 .top-left {
   grid-area: 1 / 1 / span 4 / span 8;
   background-image: url("../images/desktop-image-hero-1.jpg");
