@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./dist/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./dist/output.css" />
+    <script defer src="./dist/script.js"></script>
+
+    <title>Frontend Mentor | News homepage</title>
+  </head>
+  <body>
+    <div class="page relative">
+      <header>
+        <div class="container py-5 main-flex">
+          <div class="logo">
+            <img
+              src="./dist/images/logo.svg"
+              alt="The Logo Of The Website It's Just a Capital W Letter"
+            />
+          </div>
+          <nav>
+            <div class="overlay"></div>
+            <div class="nav-icon cursor-pointer z-30 relative md:hidden">
+              <img
+                src="./dist/images/icon-menu.svg"
+                alt="Hamburgr Icon To Open Navigation Menu"
+              />
+            </div>
+            <ul
+              class="fixed z-20 transition-all -right-full top-0 pt-28 pr-40 pl-5"
+            >
+              <li><a href="#">Home</a></li>
+              <li><a href="#">New</a></li>
+              <li><a href="#">Popular</a></li>
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">Categories</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="intro">
+        <div class="container md:flex gap-4">
+          <div class="left">
+            <div class="intro-img mb-6">
+              <img
+                src="./dist/images/image-web-3-mobile.jpg"
+                alt="Random Image With Some Shapes"
+              />
+            </div>
+            <div class="text my-6">
+              <h1 class="title text-5xl font-extra-bold">
+                The Bright Future of Web 3.0?
+              </h1>
+              <div class="md:ml-16 mt-4">
+                <p class="desc">
+                  We dive into the next evolution of the web that claims to put
+                  the power of the platforms back into the hands of the people.
+                  But is it really fulfilling its promise?
+                </p>
+                <button>Read more</button>
+              </div>
+            </div>
+          </div>
+          <div class="new bg-very-dark-blue p-5">
+            <h2 class="text-4xl text-soft-orange font-bold">New</h2>
+            <ul class="mt-4">
+              <li>
+                <p>Hydrogen VS Electric Cars</p>
+                <p class="desc">
+                  Will hydrogen-fueled cars ever catch up to EVs?
+                </p>
+              </li>
+              <li>
+                <p>The Downsides of AI Artistry</p>
+                <p class="desc">
+                  What are the possible adverse effects of on-demand AI image
+                  generation?
+                </p>
+              </li>
+              <li>
+                <p>Is VC Funding Drying Up?</p>
+                <p class="desc">
+                  Private funding by VC firms is down 50% YOY. We take a look at
+                  what that means.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="cards my-10">
+        <div class="container md:flex">
+          <div class="card">
+            <img src="./dist/images/image-retro-pcs.jpg" alt="Retro Pcs" />
+            <div class="text">
+              <p>01</p>
+              <p>Reviving Retro PCs</p>
+              <p class="desc">
+                What happens when old PCs are given modern upgrades?
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="./dist/images/image-top-laptops.jpg "
+              alt="Keyboard image"
+            />
+            <div class="text">
+              <p>02</p>
+              <p>Top 10 Laptops of 2022</p>
+              <p class="desc">Our best picks for various needs and budgets.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="./dist/images/image-gaming-growth.jpg"
+              alt="Some one holding controller"
+            />
+            <div class="text">
+              <p>03</p>
+              <p>The Growth of Gaming</p>
+              <p class="desc">
+                How the pandemic has sparked fresh opportunities
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
