@@ -1,0 +1,163 @@
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:has(::before, ::after) {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--off-white);
+  font-family: "Poppins", sans-serif;
+}
+
+.parent {
+  width: 100%;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+}
+
+main {
+  background-color: white;
+  padding: 1.5em 0.75em;
+  width: min(95%, 600px);
+  border-radius: 1em;
+  border-bottom-right-radius: 3em;
+}
+
+/* Form Start */
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .form {
+    justify-content: flex-start;
+    gap: 1.5em;
+  }
+}
+
+.form label span.error-span {
+  font-size: 10px;
+  opacity: 0;
+}
+.form label.error span.error-span {
+  opacity: 1;
+}
+
+.form label span.title {
+  color: var(--smokey-grey);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-weight: 400;
+}
+.form label.error span {
+  color: var(--light-red);
+}
+
+.form label input {
+  display: block;
+  max-width: 100px;
+  padding: 0.5em 0.15em;
+  border: solid 1px var(--light-grey);
+  border-radius: 0.5em;
+  font-size: 32px;
+  font-weight: 700;
+
+  &:focus {
+    outline: none;
+    border-color: var(--purple);
+  }
+}
+.form label.error input {
+  border-color: var(--light-red);
+}
+@media (min-width: 768px) {
+  .form label input {
+    max-width: 130px;
+  }
+}
+
+/* Remove Arrows From Input */
+input[type="number"] {
+  /* Firefox */
+  appearance: textfiled;
+  -moz-appearance: textfield;
+
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+/* Form End */
+
+/* Start Submit Button */
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 1em;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: var(--light-grey);
+    top: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .submit {
+    justify-content: flex-end;
+  }
+}
+
+.submit a {
+  display: block;
+  background-color: var(--purple);
+  border-radius: 50%;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  padding: 0.5em;
+  aspect-ratio: 1 / 1;
+  transition: background-color 0.2s;
+}
+
+@media (hover) {
+  .submit a:hover {
+    background-color: var(--off-black);
+  }
+}
+/* End Submit Button */
+
+/* Start Result */
+.result > div p {
+  font-size: 50px;
+  font-weight: 700;
+  color: var(--off-black);
+}
+.result > div p span {
+  color: var(--purple);
+}
+/* End Result*/

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <div class="parent">
+      <main>
+        <div class="container">
+          <div class="form">
+            <label for="day">
+              <span class="title">day</span>
+              <input
+                type="number"
+                name="month"
+                id="day"
+                placeholder="DD"
+                min="1"
+                max="31"
+                value="4"
+              />
+              <span class="error-span">This field is required</span>
+            </label>
+            <label for="month">
+              <span class="title">month</span>
+              <input
+                type="number"
+                name="month"
+                id="month"
+                placeholder="MM"
+                min="1"
+                max="12"
+                value="8"
+              />
+              <span class="error-span">This field is required</span>
+            </label>
+            <label for="year">
+              <span class="title">year</span>
+              <input
+                type="number"
+                name="year"
+                id="year"
+                placeholder="YYYY"
+                min="1950"
+                max="2024"
+                value="2005"
+              />
+              <span class="error-span">This field is required</span>
+            </label>
+          </div>
+          <div class="submit">
+            <a href="#">
+              <img src="./images/icon-arrow.svg" alt="Arrow Down For Submit" />
+            </a>
+          </div>
+          <div class="result">
+            <div class="years">
+              <p><span>--</span> years</p>
+            </div>
+            <div class="months">
+              <p><span>--</span> months</p>
+            </div>
+            <div class="days">
+              <p><span>--</span> days</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
