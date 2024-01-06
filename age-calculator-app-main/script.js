@@ -7,8 +7,12 @@ const daysResult = document.querySelector(".days span");
 const monthsResult = document.querySelector(".months span");
 const yearsResult = document.querySelector(".years span");
 
-submitBtn.onclick = () => {
-  let state = false;
+// Get Days In Given Month
+const numDays = (y, m) => new Date(y, m, 0).getDate();
+// Display Age Results
+const showResult = (el, value) => (el.innerHTML = value);
+
+submitBtn.onclick = (e) => {
   inputs.forEach((input, i) => {
     let label = input.parentElement;
     let rangeCond = input.value < +input.min || input.value > +input.max;
@@ -16,6 +20,7 @@ submitBtn.onclick = () => {
     // Check if inputs are empty
     if (!input.value) {
       sendError(undefined, label, "This field is required");
+      e.preventDefault();
     }
     // Check if inputs are out of range
     else if (rangeCond) {
@@ -24,16 +29,21 @@ submitBtn.onclick = () => {
       else if (i == 1) msg += "month";
       else msg = "Must be in the past";
       sendError(false, label, msg);
+      e.preventDefault();
     }
     // Check for valid date
     else if (daysInput.value > numDays(yearsInput.value, monthsInput.value)) {
       sendError(false, label, "Must be a vaild date");
+      e.preventDefault();
     } else {
       sendError(true, label);
-      state = true;
     }
   });
-  if (state) calcAge();
+  let daysLabelClass = daysInput.parentElement.classList.contains("error");
+  let monthsLabelClass = monthsInput.parentElement.classList.contains("error");
+  let yearsLabelClass = yearsInput.parentElement.classList.contains("error");
+  let errorLabelClass = daysLabelClass || monthsLabelClass || yearsLabelClass;
+  if (!errorLabelClass) calcAge();
 };
 
 function sendError(clearError = false, el, msg) {
@@ -46,23 +56,16 @@ function sendError(clearError = false, el, msg) {
   el.children[2].innerHTML = msg;
 }
 
-function numDays(y, m) {
-  return new Date(y, m, 0).getDate();
-}
-
 function calcAge() {
   let date = new Date();
-  date.setMonth(9);
   let currentMonth = date.getMonth() + 1;
   let today = date.getDate();
 
-  let day = +daysInput.value,
-    month = +monthsInput.value,
-    year = +yearsInput.value;
+  let day = +daysInput.value;
+  let month = +monthsInput.value;
+  let year = +yearsInput.value;
 
-  let yearsAge = 0,
-    monthsAge = 0,
-    daysAge = 0;
+  let yearsAge, monthsAge, daysAge;
 
   // Calculate Years
   if (currentMonth > month || (currentMonth == month && today >= day))
@@ -72,10 +75,9 @@ function calcAge() {
   // Calculate Months
   if (currentMonth > month) {
     monthsAge = currentMonth - month;
-    // if (day >= today) monthsAge--;
   } else if (currentMonth == month) {
     monthsAge = 11;
-    if (today > day) monthsAge = 0;
+    if (today >= day) monthsAge = 0;
   } else {
     monthsAge = 12 - month;
     if (today >= day) monthsAge++;
@@ -87,22 +89,7 @@ function calcAge() {
     daysAge = numDays(date.getFullYear(), date.getMonth()) - day + today;
   }
 
-  if (currentMonth == month && today == day) {
-    yearsAge = date.getFullYear() - year;
-    monthsAge = daysAge = 0;
-  }
-
   showResult(yearsResult, yearsAge);
   showResult(monthsResult, monthsAge);
   showResult(daysResult, daysAge);
-}
-
-function showResult(el, value) {
-  // let counter = 0;
-  // const i = setInterval(() => {
-  //   el.innerHTML = counter;
-  //   counter++;
-  //   if (counter > value) clearInterval(i);
-  // }, 60);
-  el.innerHTML = value;
 }
