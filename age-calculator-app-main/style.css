@@ -41,8 +41,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5em;
-  flex-wrap: wrap;
+  gap: 0.25em;
   position: relative;
 }
 @media (min-width: 768px) {
