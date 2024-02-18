@@ -1,0 +1,86 @@
+:root {
+  --green: hsl(75, 94%, 57%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 20%);
+  --dark-grey: hsl(0, 0%, 12%);
+  --off-black: hsl(0, 0%, 8%);
+  --radius: 15px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:has(::before, ::after) {
+  box-sizing: border-box;
+}
+img,
+video,
+picture {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--off-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+}
+
+.wrapper {
+  background-color: var(--dark-grey);
+  max-width: min(90%, 350px);
+  margin-inline: auto;
+  border-radius: var(--radius);
+}
+.container {
+  padding: 1em 1.3em;
+  text-align: center;
+  color: var(--white);
+}
+
+.profile-pic img {
+  width: 80px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.text {
+  margin-block: 1em;
+}
+
+.text .name {
+  margin-block-end: 0.2em;
+}
+
+.text .address {
+  color: var(--green);
+}
+
+.text .job {
+  font-size: 14px;
+  margin-block-start: 1.5em;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.links a {
+  background-color: var(--grey);
+  color: var(--white);
+  text-decoration: none;
+  padding-block: 0.7em;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.2s;
+  &:is(:hover, :focus) {
+    outline: none;
+    background-color: var(--green);
+    color: var(--dark-grey);
+  }
+}
