@@ -1,0 +1,173 @@
+:root {
+  --purple: hsl(332, 51%, 32%);
+  --brown: hsl(14, 45%, 36%);
+
+  --white: white;
+  --rose-white: hsl(330, 100%, 98%);
+  --eggshell: hsl(30, 54%, 90%);
+  --light-grey: hsl(30, 18%, 87%);
+  --wenge-brown: hsl(30, 10%, 34%);
+  --dark-charocoal: hsl(24, 5%, 18%);
+
+  --outfit: "Outfit", sans-serif;
+  --young: "Young Serif", serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:has(::before, ::after) {
+  box-sizing: border-box;
+}
+img,
+video,
+picture {
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--outfit);
+}
+
+@media (min-width: 768px) {
+  body {
+    background-color: var(--eggshell);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+  }
+  .wrapper {
+    border-radius: 26px;
+    padding: 1em;
+    background-color: white;
+    max-width: 500px;
+    margin-block: 1.5em;
+  }
+}
+
+.container {
+  max-width: min(90%, 600px);
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .img img {
+    border-radius: 10px;
+    /* max-width: 500px; */
+  }
+}
+.section-title {
+  font-family: var(--young);
+  font-size: 1.8rem;
+  color: var(--brown);
+}
+
+.wrapper .container section {
+  margin-block: 1em;
+}
+
+.intro .title {
+  font-family: var(--young);
+  font-weight: 400;
+  color: var(--dark-charocoal);
+}
+
+.intro .desc {
+  font-family: var(--outfit);
+  color: var(--wenge-brown);
+  margin-top: 1em;
+}
+
+/* Start Preparation Time */
+.preparation-time {
+  padding-inline: 1em;
+}
+.preparation-time .content {
+  background-color: var(--eggshell);
+  padding: 1em;
+  border-radius: 10px;
+}
+.preparation-time .content > p.title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--purple);
+  margin-block-end: 0.5em;
+}
+.preparation-time ul {
+  padding-inline: 1.5em;
+}
+.preparation-time ul li {
+  padding-inline-start: 16px;
+  margin-block: 0.5em;
+}
+
+.preparation-time ul li .title {
+  color: var(--dark-charocoal);
+  font-weight: 600;
+  & span {
+    font-weight: 400;
+  }
+}
+/* End Preparation Time */
+
+/* START Ingredients */
+.ingredients {
+  border-bottom: solid 1px var(--wenge-brown);
+}
+
+.ingredients ul {
+  padding-inline: 1.5em;
+}
+
+.ingredients ul li {
+  padding-inline-start: 1em;
+  color: var(--wenge-brown);
+  margin-block: 1em;
+}
+/* End Ingredients */
+/* Start Instructions */
+.instructions {
+  border-bottom: solid 1px var(--wenge-brown);
+}
+.instructions ol {
+  padding-inline: 1.5em;
+}
+
+.instructions ol li {
+  padding-inline-start: 1em;
+  color: var(--wenge-brown);
+  margin-block: 1em;
+}
+.instructions ol li span {
+  font-weight: 700;
+}
+/* End Instructions */
+
+/* Start Nutrition */
+.nutrition .desc {
+  color: var(--wenge-brown);
+  margin-block: 1.5em;
+}
+
+.table {
+  padding-inline: 1.5em;
+}
+.table .data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em 4em;
+  &:not(:last-child) {
+    border-bottom: solid 1px var(--wenge-brown);
+  }
+}
+.table p.title {
+  color: var(--wenge-brown);
+}
+.table p.value {
+  color: var(--brown);
+}
+/* End Nutrition */
