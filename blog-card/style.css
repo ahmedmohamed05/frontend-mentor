@@ -1,0 +1,94 @@
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 50%);
+  --black: hsl(0, 0%, 7%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:has(::before, ::after) {
+  box-sizing: border-box;
+}
+img,
+video,
+picture {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Figtree", sans-serif;
+  background-color: var(--yellow);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.wrapper {
+  --shadow-position: 10px;
+  background-color: var(--white);
+  padding: 1em;
+  max-width: 300px;
+  margin-inline: 1.5em;
+  border-radius: 20px;
+  border: solid 1px var(--black);
+  transition: 0.2s;
+  box-shadow: var(--shadow-position) var(--shadow-position) var(--black);
+}
+
+.img img {
+  border-radius: 10px;
+}
+
+.learning {
+  display: block;
+  margin-block: 1em;
+  background-color: var(--yellow);
+  padding: 0.5em 0.8em;
+  width: fit-content;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.published {
+  font-size: 0.7rem;
+  margin-block: 1em;
+}
+
+h3 {
+  margin-block: 1em;
+  transition: 0.1s;
+}
+.wrapper:is(:hover, :focus) {
+  --shadow-position: 20px;
+  translate: -5px -5px;
+  h3 {
+    color: var(--yellow);
+  }
+}
+
+.desc {
+  margin-block: 1em;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--grey);
+}
+
+.profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+
+.profile img {
+  width: 30px;
+}
+
+.profile .name {
+  font-size: 0.8rem;
+  font-weight: 800;
+}
