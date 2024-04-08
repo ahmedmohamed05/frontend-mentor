@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <div class="parent">
+      <header>
+        <div class="container">
+          <div class="logo">
+            <h1>TODO</h1>
+          </div>
+          <div class="theme-icon">
+            <button>
+              <img src="./images/icon-moon.svg" alt="Moon Icon" />
+            </button>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <form class="input">
+            <button class="circle"></button>
+            <input
+              type="text"
+              name="new todo"
+              placeholder="Create a new todo..."
+              autofocus
+            />
+          </form>
+          <div class="todos-container">
+            <ul class="todos"></ul>
+            <div class="info">
+              <span class="items-left">0 item left</span>
+              <button class="clear-completed">Clear Completed</button>
+            </div>
+          </div>
+          <div class="filter">
+            <button class="active">All</button>
+            <button>Active</button>
+            <button>Completed</button>
+          </div>
+        </div>
+      </main>
+      <div class="notification">
+        <p></p>
+        <span></span>
+      </div>
+      <p>Drag and drop to reorder list</p>
+    </div>
+  </body>
+</html>
