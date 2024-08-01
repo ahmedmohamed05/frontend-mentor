@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script defer src="./assets/script.js"></script>
+
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <div class="calc-header">
+      <div class="container">
+        <div class="title">
+          <h2>Calc</h2>
+        </div>
+        <div class="theme-switcher">
+          <div class="text">
+            <span>THEME</span>
+          </div>
+          <div class="theme">
+            <div class="theme-numbers">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+            <div class="toggle-container">
+              <span class="circle" data-theme="1"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calc-screen">
+      <div class="container">
+        <p class="result">0</p>
+      </div>
+    </div>
+    <div class="keys">
+      <div class="container">
+        <div class="keypad">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button class="del btn">DEL</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button class="addition">+</button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button class="subtraction">-</button>
+          <button class="dot">.</button>
+          <button>0</button>
+          <button class="division">/</button>
+          <button class="multiplaction">x</button>
+          <button class="half-width btn reset">RESET</button>
+          <button class="half-width equal">=</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

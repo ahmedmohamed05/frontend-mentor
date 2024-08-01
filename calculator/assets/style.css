@@ -1,0 +1,268 @@
+/* Start Restting */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:has(::before, ::after) {
+  box-sizing: border-box;
+}
+img,
+video,
+picture {
+  max-width: 100%;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+input,
+textarea {
+  outline: none;
+}
+button {
+  user-select: none;
+}
+/* End Restting */
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --border-radius: 10px;
+}
+
+/* Start Theme one vars */
+[data-theme="1"] {
+  --main-bg: hsl(222, 26%, 31%);
+  --keyboard-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+
+  --actions-keys-bg: hsl(225, 21%, 49%);
+  --actions-keys-shadow: hsl(224, 28%, 35%);
+
+  --equal-sign-bg: hsl(6, 63%, 50%);
+  --equal-sign-shadow: hsl(6, 70%, 34%);
+
+  --numbers-keys-bg: hsl(30, 25%, 89%);
+  --numbers-keys-shadow: hsl(28, 16%, 65%);
+
+  --_dark-blue: hsl(221, 14%, 31%);
+}
+/* End Theme one vars */
+
+/* Start theme two vars */
+[data-theme="2"] {
+  --main-bg: hsl(0, 0%, 90%);
+  --keyboard-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+
+  --actions-keys-bg: hsl(185, 42%, 37%);
+  --actions-keys-shadow: hsl(185, 58%, 25%);
+
+  --equal-sign-bg: hsl(25, 98%, 40%);
+  --equal-sign-shadow: hsl(25, 99%, 27%);
+
+  --numbers-keys-bg: hsl(45, 7%, 89%);
+  --numbers-keys-shadow: hsl(35, 11%, 61%);
+
+  --_dark-yellow: hsl(60, 10%, 19%);
+}
+/* End theme two vars */
+
+/* Start theme three vars */
+[data-theme="3"] {
+  --main-bg: hsl(268, 75%, 9%);
+  --keyboard-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+
+  --actions-keys-bg: hsl(281, 89%, 26%);
+  --actions-keys-shadow: hsl(285, 91%, 52%);
+
+  --equal-sign-bg: hsl(176, 100%, 44%);
+  --equal-sign-shadow: hsl(177, 92%, 70%);
+
+  --numbers-keys-bg: hsl(268, 47%, 21%);
+  --numbers-keys-shadow: hsl(290, 70%, 36%);
+
+  --_light-yellow: hsl(52, 100%, 62%);
+  --_dark-blue: hsl(198, 20%, 13%);
+}
+/* End theme three vars */
+
+/* Start Global Styles */
+
+body {
+  background-color: var(--main-bg);
+  font-family: "League Spartan", sans-serif;
+}
+
+.container {
+  max-width: min(85%, 450px);
+  margin-inline: auto;
+}
+/* End Global Styles */
+
+/* !: reset and del btns always white */
+
+/* Start calc title and theme switcher */
+.calc-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.25rem;
+}
+
+.calc-header .title {
+  font-weight: bold;
+  color: var(--white);
+}
+
+:root[data-theme="2"] {
+  --white: hsl(60, 10%, 19%);
+}
+
+:root[data-theme="3"] {
+  --white: var(--_light-yellow);
+  --_dark-blue: var(--_light-yellow);
+}
+
+.calc-header .theme-switcher {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+  color: var(--white);
+  font-weight: bold;
+}
+
+.calc-header .theme-switcher .theme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calc-header .theme-switcher .theme .theme-numbers span {
+  font-size: 0.9em;
+}
+
+.calc-header .theme-switcher .theme .theme-numbers span:nth-child(2) {
+  margin-inline: 10px;
+}
+
+.calc-header .theme-switcher .theme .toggle-container {
+  width: 70px;
+  height: 20px;
+  background-color: var(--keyboard-bg);
+  position: relative;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.calc-header .theme-switcher .theme .toggle-container .circle {
+  display: block;
+  width: 15px;
+  aspect-ratio: 1/1;
+  background-color: var(--equal-sign-bg);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 300ms;
+
+  &[data-theme="1"] {
+    left: 5px;
+  }
+  &[data-theme="2"] {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &[data-theme="3"] {
+    /* 5px for the padding and 15px for the width equals 20px */
+    left: calc(100% - 20px);
+  }
+}
+
+/* End calc title and theme switcher */
+
+/* Start calc screen */
+.calc-screen {
+  margin-block: 1.25em;
+}
+.calc-screen .container {
+  padding: 1rem;
+  background-color: var(--screen-bg);
+  border-radius: var(--border-radius);
+}
+.calc-screen .result {
+  text-align: right;
+  color: var(--white);
+  font-size: 2em;
+  font-weight: bold;
+}
+/* End calc screen */
+
+/* Start keypad */
+.keys .container {
+  background-color: var(--keyboard-bg);
+  border-radius: var(--border-radius);
+  /* padding: 1rem; */
+}
+.keys .keypad {
+  --_gap: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--_gap);
+  padding: 1rem;
+}
+.keys .container button {
+  --_shadow-y: 5px;
+  --_shadow-bg: var(--numbers-keys-shadow);
+  all: unset;
+  border-radius: var(--border-radius);
+  font-size: 1.5em;
+  font-weight: bold;
+  width: calc(100% / 4 - var(--_gap));
+  height: 50px;
+  background-color: var(--numbers-keys-bg);
+  color: var(--_dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 var(--_shadow-y) var(--_shadow-bg);
+  margin-block: var(--_shadow-y);
+  transition: 250ms;
+}
+.keys .container button.half-width {
+  width: calc(100% / 2 - var(--_gap));
+  padding-block: 0.5rem;
+}
+.keys .container button.btn {
+  background-color: var(--actions-keys-bg);
+  font-size: 1em;
+  color: white;
+  --_shadow-bg: var(--actions-keys-shadow);
+}
+.keys .container button.equal {
+  background-color: var(--equal-sign-bg);
+  color: var(--white);
+  --_shadow-bg: var(--equal-sign-shadow);
+}
+[data-theme="2"] .keys .container button.equal {
+  color: white;
+}
+[data-theme="3"] .keys .container button.equal {
+  color: hsl(198, 20%, 13%);
+}
+
+@media (hover) {
+  .keys .container button:is(:hover, :focus) {
+    transform: translateY(var(--_shadow-y));
+    box-shadow: 0 0 var(--_shadow-bg);
+  }
+}
+/* End keypad */
