@@ -28,7 +28,8 @@ function handleBtn(e) {
   // DEL Button
   if (valuePressed == "DEL") {
     if (expression) {
-      expression = expression.substring(0, expression.length - 1);
+      // expression = expression.substring(0, expression.length - 1);
+      expression = expression.slice(0, -1);
     }
 
     // Check if the expression is empty
@@ -72,7 +73,7 @@ function handleBtn(e) {
       return;
     }
     // Store the evalation to re-use it
-    expression = eval(expression);
+    expression = "" + eval(expression); // convert number to string
   }
 
   // Numbers buttons
